@@ -1,0 +1,17 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.message-display {
+		width: 50vw;
+		border: solid medium #83677B;
+		border-radius: 5px;
+		align-self: center;
+		font-size: large;
+		text-align: center;
+		text-shadow: 4px 2px 5px #64485C;
+		box-shadow: 6px 6px 8px #64485C;
+		color: rgb(80, 61, 75);
+	}
+}
