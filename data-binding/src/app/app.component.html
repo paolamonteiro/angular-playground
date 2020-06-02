@@ -1,0 +1,97 @@
+<section class="content">
+  <article>
+    <h3>Class and Style Binding</h3>
+    <!-- data binding from COMPONENT to TEMPLATE -->
+    <div>
+      <p>Select a class:</p>
+      <select #cssClass (change)="(0)">
+        <option value="alert-success">Success</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Error</option>
+      </select>
+      <br />
+      <br />
+
+      <div class="alert {{ cssClass.value }}" role="alert">
+        Colored text based on the combobox value
+      </div>
+
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-success]="cssClass.value === 'alert-success'"
+      >
+        Success
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-info]="cssClass.value === 'alert-info'"
+      >
+        Info
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-warning]="cssClass.value === 'alert-warning'"
+      >
+        Warning
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-danger]="cssClass.value === 'alert-danger'"
+      >
+        Error
+      </div>
+    </div>
+  </article>
+
+  <article>
+    <h3>Event Binding</h3>
+    <!-- data binding from TEMPLATE to COMPONENT -->
+    <div>
+      <button (click)="alert()" class="btn btn-primary">Click-me</button>
+    </div>
+    <br />
+    <br />
+
+    <input
+      type="text"
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="saveValue(inputField.value)"
+      (blur)="saveValue(inputField.value)"
+      #inputField
+    />
+    <p>Typing: {{ actualValue }}</p>
+    <p>Saved: {{ valueToSave }}</p>
+    <br />
+
+    <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight]="isMouseOver"
+    >
+      Hover-me!
+    </span>
+    <br />
+    <br />
+  </article>
+
+  <article>
+    <h3>Two-Way Data Binding</h3>
+    <!-- Bidirectional data binding to keep both updated: COMPONENT and TEMPLATE at same time -->
+
+    <input
+      placeholder="first"
+      type="text"
+      [ngModel]="name"
+      (ngModelChange)="name = $event"
+    />
+
+    <input placeholder="second" type="text" [(ngModel)]="name" />
+
+    <p>Typed name: {{ name }}</p>
+  </article>
+</section>
