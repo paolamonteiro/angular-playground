@@ -1,5 +1,5 @@
 # Subject Usage
-### Little poc to learn Subject usages 
+### Little poc to learn Subject usage
 ### You can write something then display the message
 
 - Demo video: https://drive.google.com/file/d/1u9YotJCyVd3E5wUW4-9LO-MuZZWgoNYJ/view 
