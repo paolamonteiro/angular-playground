@@ -1,0 +1,12 @@
+<div class="main">
+  <form [formGroup]="form">
+      <section class="message-box">
+        <input type="text" placeholder="Enter message" formControlName="message" />
+        <button type="button" (click)="setMessage()">Display Message</button>
+      </section>
+  </form>
+  
+  <div class="message-display" *ngIf="message">
+    <p>{{ message }}</p>
+  </div>
+</div>
